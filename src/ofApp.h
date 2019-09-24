@@ -1,5 +1,7 @@
 #pragma once
 
+#include "ofxGui.h"
+#include "ofxCv.h" 
 #include "ofMain.h"
 #include "Flower.h"
 #include <vector>
@@ -28,4 +30,10 @@ class ofApp : public ofBaseApp{
         ofEasyCam cam;
         ofPlanePrimitive plane;
         ofMaterial roadMaterial;
+    
+        //GUI stuff for later
+        ofxPanel gui;
+        ofxIntSlider intSlider;
+        ofxFloatSlider floatSlider;
+        ofxButton button;
 };

@@ -1,4 +1,7 @@
 #include "ofApp.h"
+using namespace cv;
+using namespace ofxCv;
+
 //--------------------------------------------------------------
 void ofApp::setup(){
     //ofBackground(255,82,86);
@@ -13,6 +16,8 @@ void ofApp::setup(){
     for(unsigned i=0; i < flowers.size(); ++i) {
         flowers[i].setup();
     }
+    //gui.setup();
+    //gui.add(intSlider.setup("int slider", 0,0,300));
 }
 
 //--------------------------------------------------------------
@@ -20,8 +25,9 @@ void ofApp::update() {}
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    //gui.draw();
     cam.begin();
-//    light.draw();
+    //light.draw();
     light.enable();
     for(unsigned i=0; i < flowers.size(); ++i) {
         flowers[i].draw();

@@ -1,11 +1,18 @@
 #pragma once
 
+#include "SmileDetector.h"
 #include "ofxGui.h"
-#include "ofxCv.h" 
 #include "ofMain.h"
 #include "Flower.h"
 #include <vector>
 #include <iostream>
+
+//
+//  SmileDetector.cpp
+//  FEELINGFLOWERS
+//
+//  Created by emily morgan on 2019-09-25.
+//
 
 class ofApp : public ofBaseApp{
 	public:
@@ -27,7 +34,7 @@ class ofApp : public ofBaseApp{
         vector < Flower > flowers;
         ofMesh mesh;
         ofLight light;
-        ofEasyCam cam;
+        ofEasyCam scenecam;
         ofPlanePrimitive plane;
         ofMaterial roadMaterial;
     
@@ -36,4 +43,7 @@ class ofApp : public ofBaseApp{
         ofxIntSlider intSlider;
         ofxFloatSlider floatSlider;
         ofxButton button;
+    
+        ofVideoGrabber cam;
+        SmileDetector smile;
 };

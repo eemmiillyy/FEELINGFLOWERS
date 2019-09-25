@@ -1,9 +1,17 @@
 #include "ofApp.h"
+
 using namespace cv;
 using namespace ofxCv;
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    //SMILE DETECTION
+    ofSetVerticalSync(true);
+    ofSetFrameRate(120);
+    cam.setup(640, 480);
+    //SmileDetector class
+    smile.setup();
+    
     //ofBackground(255,82,86);
     ofBackground(254,254,254);
     ofEnableDepthTest();
@@ -21,18 +29,31 @@ void ofApp::setup(){
 }
 
 //--------------------------------------------------------------
-void ofApp::update() {}
+void ofApp::update() {
+    cam.update();
+    if(cam.isFrameNew()){
+        smile.update(cam);
+        if(smile.getFaceFound()) {
+            float cur = smile.getSmileAmount();
+            ofLog() << ofNormalize(smile.getSmileAmount(), 0, 200);
+        }
+    }
+}
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     //gui.draw();
-    cam.begin();
+    ofSetColor(255);
+    cam.draw(0,0);
+    smile.draw();
+
+    scenecam.begin();
     //light.draw();
     light.enable();
     for(unsigned i=0; i < flowers.size(); ++i) {
         flowers[i].draw();
     }
-    cam.end();
+    scenecam.end();
 }
 
 //--------------------------------------------------------------

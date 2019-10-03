@@ -1,20 +1,7 @@
-//
-//  SmileDetector.h
-//  FEELINGFLOWERS
-//
-//  Created by emily morgan on 2019-09-25.
-//
-
 #ifndef SmileDetector_h
 #define SmileDetector_h
-#include <vector>
-#include <iostream>
+
 #include "ofxCv.h"
-#include "ofRectangle.h"
-#include "ofxCv/Utilities.h"
-#include "of3dGraphics.h"
-#include "ofGraphics.h"
-#include "of3dUtils.h"
 
 class SmileDetector {
 public:

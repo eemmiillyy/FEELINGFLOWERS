@@ -3,32 +3,34 @@
 using namespace cv;
 using namespace ofxCv;
 
-//--------------------------------------------------------------
 void ofApp::setup(){
     //SMILE DETECTION
     ofSetVerticalSync(true);
     ofSetFrameRate(120);
     cam.setup(640, 480);
-    //SmileDetector class
     smile.setup();
-    
-    //ofBackground(255,82,86);
     ofBackground(254,254,254);
     ofEnableDepthTest();
     light.setPosition(-100, 200,0);
     light.setSpotlight(85.0, 0.8);
-    for(int i=0; i < 10; ++i) {
-        flowers.push_back(Flower(i*8, i * 5, i));
+    
+    for(int i = 0; i < 10; ++i) {
+        flowers.push_back(Flower(i * 8, i * 5));
     }
-    std::cout << flowers.size() << "  created. \n";
-    for(unsigned i=0; i < flowers.size(); ++i) {
-        flowers[i].setup();
+    
+    for(auto& flower : flowers) {
+        flower.setup();
+        int xBounds = ofGetWindowWidth()/2;
+        int yBounds = ofGetWindowHeight()/2;
+        int randomX = ofRandom(-(xBounds), xBounds);
+        int randomY = ofRandom(-(yBounds), yBounds);
+        int randomZ = ofRandom(-ofGetWindowWidth(),0);
+        flower.setPosition(ofVec3f(randomX,randomY,randomZ));
     }
     //gui.setup();
     //gui.add(intSlider.setup("int slider", 0,0,300));
 }
 
-//--------------------------------------------------------------
 void ofApp::update() {
     cam.update();
     if(cam.isFrameNew()){
@@ -40,76 +42,18 @@ void ofApp::update() {
     }
 }
 
-//--------------------------------------------------------------
 void ofApp::draw(){
     //gui.draw();
     ofSetColor(255);
     cam.draw(0,0);
     smile.draw();
-
     scenecam.begin();
-    //light.draw();
+    light.draw();
     light.enable();
-    for(unsigned i=0; i < flowers.size(); ++i) {
-        flowers[i].draw();
+    for(auto& flower : flowers) {
+        flower.panDeg(sin(flower.getZ()));
+        flower.draw();
     }
     scenecam.end();
 }
-
-//--------------------------------------------------------------
-void ofApp::keyPressed(int key){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::keyReleased(int key){
-    
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseEntered(int x, int y){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseExited(int x, int y){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
-
-}
-
-//N Equidistant Points on a Sphere
-//no algorithm to space any number of points equally on a sphere.
 

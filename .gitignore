@@ -1,0 +1,18 @@
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.xcuserstate
+xcuserdata
+project.xcworkspace/
+*.xcworkspace 
+
+*.log
+*.mode*
+*.pyc
+.svn/
+
+/bin/* 
+!/bin/data/ 

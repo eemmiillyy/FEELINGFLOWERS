@@ -24,6 +24,7 @@
 		6AABAB39E82AF5CFEA23A205 /* ContourFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB4A8427353AED09174BE5 /* ContourFinder.cpp */; };
 		7CDAD32BE4FA46701E3552C7 /* RunningBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CBF6AED6A17AC0C17F63CC4 /* RunningBackground.cpp */; };
 		8022CB22233B8EDA000E6B05 /* SmileDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8022CB21233B8EDA000E6B05 /* SmileDetector.cpp */; };
+		808A8D49234F6024009B18F7 /* Center.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 808A8D47234F6024009B18F7 /* Center.cpp */; };
 		837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15F2C6477A769C03A56D1401 /* ofxSlider.cpp */; };
 		852E0891794923EE7583C621 /* ofxInputField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44B351490B620D04E1E7C52D /* ofxInputField.cpp */; };
 		853E0BA2F448076739446874 /* ofxColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 181D363B6DD54D1FA6309C43 /* ofxColorPicker.cpp */; };
@@ -242,6 +243,8 @@
 		805FA451233B4AE100BFFF02 /* smiled_05.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = smiled_05.xml; path = ../../../../../SMILEsmileD/smileD/smiled_05.xml; sourceTree = "<group>"; };
 		805FA452233B4E0E00BFFF02 /* haarcascade_frontalface_default.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = haarcascade_frontalface_default.xml; path = ../../../../../openFrameworks/examples/computer_vision/opencvHaarFinderExample/bin/data/haarcascade_frontalface_default.xml; sourceTree = "<group>"; };
 		807FB3DE21FAEFCA58336C58 /* color_cvt.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = color_cvt.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/cudev/functional/detail/color_cvt.hpp; sourceTree = SOURCE_ROOT; };
+		808A8D47234F6024009B18F7 /* Center.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Center.cpp; sourceTree = "<group>"; };
+		808A8D48234F6024009B18F7 /* Center.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Center.h; sourceTree = "<group>"; };
 		819603F2A88664686AED38E8 /* split_merge.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = split_merge.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/cudev/grid/split_merge.hpp; sourceTree = SOURCE_ROOT; };
 		820102E51B125101D727B3CC /* ETF.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ETF.h; path = ../../../addons/ofxCv/libs/CLD/include/CLD/ETF.h; sourceTree = SOURCE_ROOT; };
 		826D2BD7602562E48C8B3953 /* common.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = common.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/core/cuda/common.hpp; sourceTree = SOURCE_ROOT; };
@@ -1801,6 +1804,8 @@
 				84571B949C0F583C4985B7E8 /* Petal.h */,
 				8022CB20233B68B1000E6B05 /* SmileDetector.h */,
 				8022CB21233B8EDA000E6B05 /* SmileDetector.cpp */,
+				808A8D47234F6024009B18F7 /* Center.cpp */,
+				808A8D48234F6024009B18F7 /* Center.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1988,6 +1993,7 @@
 				852E0891794923EE7583C621 /* ofxInputField.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
+				808A8D49234F6024009B18F7 /* Center.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,

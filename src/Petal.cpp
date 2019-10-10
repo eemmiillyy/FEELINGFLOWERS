@@ -1,21 +1,22 @@
 #include "Petal.h"
 
-Petal::Petal(ofNode parent, int index)
-    : parent_(parent)
-    , index_(index)
+Petal::Petal(int index)
+    : index_(index)
 {}
 
 void Petal::setup() {
     sphere_.setParent(*this);
-    sphere_.setScale(3, 1, 1);
+    sphere_.setScale(4, 1, 1);
 }
 
 void Petal::draw() {
     ofPushMatrix();
     float time = ofGetElapsedTimef();
-    ofSetColor(204 + 50*sin(time + index_ * 0.14),
-               204 + 50*sin(time + index_ * 0.1),
-               204 + 50*sin(time + index_ * 0.12));
+    ofSetColor(204 + 50*sin(time + index_ % 20 * 0.64),
+               204 + 50*sin(time + index_  % 20  * 0.46),
+               204 + 50*sin(time + index_  % 20 * 0.68)
+               );
     sphere_.draw();
     ofPopMatrix();
 }
+

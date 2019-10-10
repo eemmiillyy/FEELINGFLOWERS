@@ -4,31 +4,33 @@ using namespace cv;
 using namespace ofxCv;
 
 void ofApp::setup(){
-    //SMILE DETECTION
     ofSetVerticalSync(true);
     ofSetFrameRate(120);
     cam.setup(640, 480);
     smile.setup();
-    ofBackground(254,254,254);
+    ofBackground(0,0,0);
     ofEnableDepthTest();
-    light.setPosition(-100, 200,0);
-    light.setSpotlight(85.0, 0.8);
+    scenecam.setGlobalPosition(0, 0, 0);
+    light.setParent(scenecam);
+    light.setAreaLight(600, 600);
+    flowerCount = 20;
     
-    for(int i = 0; i < 10; ++i) {
-        flowers.push_back(Flower(i * 8, i * 5));
+    for(int i = 0; i < flowerCount; ++i) {
+        flowers.push_back(Flower(i * 3));
     }
     
+    int i = 0;
     for(auto& flower : flowers) {
+        ++i;
         flower.setup();
         int xBounds = ofGetWindowWidth()/2;
         int yBounds = ofGetWindowHeight()/2;
-        int randomX = ofRandom(-(xBounds), xBounds);
+        int randomX = sin(TWO_PI / flowerCount * i)  * 800;
         int randomY = ofRandom(-(yBounds), yBounds);
-        int randomZ = ofRandom(-ofGetWindowWidth(),0);
+        int randomZ = cos(TWO_PI / flowerCount * i)  * 800;
         flower.setPosition(ofVec3f(randomX,randomY,randomZ));
     }
-    //gui.setup();
-    //gui.add(intSlider.setup("int slider", 0,0,300));
+    ofColor currentBgColor = ofGetBackgroundColor();
 }
 
 void ofApp::update() {
@@ -36,22 +38,38 @@ void ofApp::update() {
     if(cam.isFrameNew()){
         smile.update(cam);
         if(smile.getFaceFound()) {
-            float cur = smile.getSmileAmount();
-            ofLog() << ofNormalize(smile.getSmileAmount(), 0, 200);
+            //for (int i = 0; i < smile.getSmileAmount(); ++i) {
+                //float cur = smile.getSmileAmount();
+            // }
+            smileDegree = smile.getSmileAmount();
+
+            float r = 128 * smileDegree;
+            float g = 128 * smileDegree;
+            float b = 128 * smileDegree;
+            
+            float current_r = currentBgColor[0];
+            float current_g = currentBgColor[1];
+            float current_b = currentBgColor[2];
+            
+            float combo_r = ofLerp(r, current_r, smileDegree);
+            float combo_g = ofLerp(g, current_g, 0.5);
+            float combo_b = ofLerp(b, current_b, 0.5);
+            
+            ofColor bgCol = ofColor(
+                               combo_r,
+                                128,
+                                128);
+        
+//            ofLog() << ofNormalize(smileDegree, 0, 200);
+//            ofLog() << combo_r;
         }
     }
 }
 
 void ofApp::draw(){
-    //gui.draw();
-    ofSetColor(255);
-    cam.draw(0,0);
-    smile.draw();
     scenecam.begin();
-    light.draw();
     light.enable();
     for(auto& flower : flowers) {
-        flower.panDeg(sin(flower.getZ()));
         flower.draw();
     }
     scenecam.end();

@@ -6,9 +6,12 @@
 class Stem : public ofNode {
     public:
         Stem();
-        void setup(int index);
+        void setup(float radius, float height);
         void draw();
+        void update(float smileDegree);
     private:
+        float radius_;
+        float height_;
         ofCylinderPrimitive cylinder_;
 };
 

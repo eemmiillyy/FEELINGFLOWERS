@@ -6,11 +6,10 @@
 
 class Petal : public ofNode {
     public:
-        Petal(ofNode parent, int index);
+        Petal(int index);
         void setup();
         void draw();
     private:
-        ofNode parent_;
         ofSpherePrimitive sphere_;
         int index_;
 };

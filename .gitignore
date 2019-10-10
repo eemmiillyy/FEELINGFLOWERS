@@ -6,8 +6,9 @@
 *.perspectivev3
 *.xcuserstate
 xcuserdata
-project.xcworkspace/
+
 *.xcworkspace 
+*.xcscheme
 
 *.log
 *.mode*
@@ -15,4 +16,5 @@ project.xcworkspace/
 .svn/
 
 /bin/* 
-!/bin/data/ 
+!/bin/data/
+!/src/ 

@@ -9,9 +9,10 @@ class Petal : public ofNode {
         Petal(int index);
         void setup();
         void draw();
-    private:
+        void update(float smileDegree);
         ofSpherePrimitive sphere_;
         int index_;
+        bool grown;
 };
 
 #endif /* Petal_h */

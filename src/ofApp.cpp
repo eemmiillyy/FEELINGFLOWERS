@@ -59,9 +59,6 @@ void ofApp::update() {
                                combo_r,
                                 128,
                                 128);
-        
-//            ofLog() << ofNormalize(smileDegree, 0, 200);
-//            ofLog() << combo_r;
         }
     }
 }
@@ -71,6 +68,7 @@ void ofApp::draw(){
     light.enable();
     for(auto& flower : flowers) {
         flower.draw();
+        flower.grow(ofNormalize(smileDegree, 0, 200));
     }
     scenecam.end();
 }

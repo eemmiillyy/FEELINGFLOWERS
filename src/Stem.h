@@ -9,10 +9,9 @@ class Stem : public ofNode {
         void setup(float radius, float height);
         void draw();
         void update(float smileDegree);
-    private:
-        float radius_;
-        float height_;
         ofCylinderPrimitive cylinder_;
+        float height_;
+        bool grown;
 };
 
 #endif /* Stem_h */

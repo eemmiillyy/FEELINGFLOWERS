@@ -25,6 +25,7 @@
 		7CDAD32BE4FA46701E3552C7 /* RunningBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CBF6AED6A17AC0C17F63CC4 /* RunningBackground.cpp */; };
 		8022CB22233B8EDA000E6B05 /* SmileDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8022CB21233B8EDA000E6B05 /* SmileDetector.cpp */; };
 		808A8D49234F6024009B18F7 /* Center.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 808A8D47234F6024009B18F7 /* Center.cpp */; };
+		808A8D4C23506760009B18F7 /* GrowthPolicy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 808A8D4A23506760009B18F7 /* GrowthPolicy.cpp */; };
 		837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15F2C6477A769C03A56D1401 /* ofxSlider.cpp */; };
 		852E0891794923EE7583C621 /* ofxInputField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44B351490B620D04E1E7C52D /* ofxInputField.cpp */; };
 		853E0BA2F448076739446874 /* ofxColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 181D363B6DD54D1FA6309C43 /* ofxColorPicker.cpp */; };
@@ -245,6 +246,8 @@
 		807FB3DE21FAEFCA58336C58 /* color_cvt.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = color_cvt.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/cudev/functional/detail/color_cvt.hpp; sourceTree = SOURCE_ROOT; };
 		808A8D47234F6024009B18F7 /* Center.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Center.cpp; sourceTree = "<group>"; };
 		808A8D48234F6024009B18F7 /* Center.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Center.h; sourceTree = "<group>"; };
+		808A8D4A23506760009B18F7 /* GrowthPolicy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GrowthPolicy.cpp; sourceTree = "<group>"; };
+		808A8D4B23506760009B18F7 /* GrowthPolicy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrowthPolicy.h; sourceTree = "<group>"; };
 		819603F2A88664686AED38E8 /* split_merge.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = split_merge.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/cudev/grid/split_merge.hpp; sourceTree = SOURCE_ROOT; };
 		820102E51B125101D727B3CC /* ETF.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ETF.h; path = ../../../addons/ofxCv/libs/CLD/include/CLD/ETF.h; sourceTree = SOURCE_ROOT; };
 		826D2BD7602562E48C8B3953 /* common.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = common.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/core/cuda/common.hpp; sourceTree = SOURCE_ROOT; };
@@ -1806,6 +1809,8 @@
 				8022CB21233B8EDA000E6B05 /* SmileDetector.cpp */,
 				808A8D47234F6024009B18F7 /* Center.cpp */,
 				808A8D48234F6024009B18F7 /* Center.h */,
+				808A8D4A23506760009B18F7 /* GrowthPolicy.cpp */,
+				808A8D4B23506760009B18F7 /* GrowthPolicy.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1978,6 +1983,7 @@
 				EBCDE831EFAE08274E799C97 /* Calibration.cpp in Sources */,
 				6AABAB39E82AF5CFEA23A205 /* ContourFinder.cpp in Sources */,
 				45CC483A999BF1065A6B926C /* Distance.cpp in Sources */,
+				808A8D4C23506760009B18F7 /* GrowthPolicy.cpp in Sources */,
 				5CC34D433F5806179935B89D /* Flow.cpp in Sources */,
 				2023EF517ED2D8B397511D4B /* Helpers.cpp in Sources */,
 				311DF864378748129984EA1D /* Kalman.cpp in Sources */,

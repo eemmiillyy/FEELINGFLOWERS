@@ -8,8 +8,10 @@ class Center : public ofNode {
         Center();
         void setup(float radius);
         void draw();
-    private:
+        void update(float smileDegree);
         ofSpherePrimitive sphere_;
+        float radius_;
+        bool grown;
 };
 
 #endif /* Center_h */
